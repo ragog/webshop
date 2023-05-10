@@ -36,7 +36,7 @@ jobs:
         run: npm ci
       - name: Run checks # run the checks passing in the ENVIRONMENT_URL and recording a test session.
         id: run-checks
-        run: npx checkly test
+        run: cd checkly && npx checkly test
           -e ENVIRONMENT_URL=${{ env.ENVIRONMENT_URL }} \
           --reporter=github
           --record
